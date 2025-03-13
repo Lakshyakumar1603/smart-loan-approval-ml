@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard_css.css') }}">
+</head>
+<body>
+    <div class="dashboard">
+        <h1 class="title">📊 Loan Data Dashboard</h1>
+        <div class="grid-container">
+            {% for data in prediction %}
+            <div class="card">Loan ID: <span>{{ data.id }}</span></div>
+            <div class="card">No. of Dependents: <span>{{ data.dep }}</span></div>
+            <div class="card">Education: 
+                <span>
+                {%if data.ed==0 %}
+                    Graduate
+                {% else %}
+                    Not Graduate
+                {% endif %}
+                </span>
+            </div>
+            <div class="card">Self Employed: 
+                <span>
+                    {%if data.se==0 %}
+                        No
+                    {%else%}
+                        Yes
+                    {%endif%}
+                    </span>
+                </div>
+            <div class="card">Income Annum: <span>₹{{ data.inn }}</span></div>
+            <div class="card">Loan Amount: <span>₹{{ data.la }}</span></div>
+            <div class="card">Loan Term: <span>{{ data.lt }} months</span></div>
+            <div class="card">CIBIL Score: <span>{{ data.cibil }}</span></div>
+            <div class="card">Residential Assets: <span>₹{{ data.ra }}</span></div>
+            <div class="card">Commercial Assets: <span>₹{{ data.ca }}</span></div>
+            <div class="card">Luxury Assets: <span>₹{{ data.lua }}</span></div>
+            <div class="card">Bank Assets: <span>₹{{ data.ba }}</span></div>
+            <div class="card">Loan Approval: 
+                <span>
+                    {% if data.p == 0 %}
+                        ✅ Approved
+                    {% else %}
+                        ❌ Rejected
+                    {% endif %}
+                </span>
+            </div>
+            <div class="card">Predicted Loan Amount: <span>₹{{ data.lap }}</span></div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    background-image: url('https://images.unsplash.com/photo-1563013544-824ae1b704d3'); /* Replace if needed */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    backdrop-filter: blur(3px);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    opacity: 0.8;
+    letter-spacing: 1px;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 700px;
+    margin: 3rem auto;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+/* Floating Input Fields */
+.form-group.floating {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+.form-group.floating input,
+.form-group.floating select {
+    width: 100%;
+    padding: 0.9rem 0.7rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark input field */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.form-group.floating input::placeholder,
+.form-group.floating select::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-group.floating label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 0 6px;
+    color: #ccc;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+    opacity: 0.5;  /* 🔥 Increased Transparency */
+}
+
+.form-group.floating input:focus + label,
+.form-group.floating input:valid + label,
+.form-group.floating select:focus + label,
+.form-group.floating select:valid + label {
+    top: -12px;
+    left: 10px;
+    font-size: 0.8rem;
+    color: #00c3ff;
+    opacity: 0.9;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    background-color: #00c3ff;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #009acd;
+    transform: scale(1.03);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .form-container {
+        margin: 2rem 1rem;
+        padding: 2rem 1.2rem;
+    }
+}

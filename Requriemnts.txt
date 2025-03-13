@@ -1,0 +1,43 @@
+# Smart-Loan-Approval System
+
+--EDA Library--
+pip install pandas,
+pip install numpy,
+pip install matplotlib
+pip install seaborn
+
+--Machine Learning Library--
+pip install scikit-Learn
+pip install warnings
+pip install xgboot
+
+--Model Dumping Library--
+pip install joblib
+pip install pickle
+
+Flask API 
+pip install Flask
+
+
+Database Work 
+
+create database loan;
+
+use loan;
+ create table prediction
+-> (
+    -> id int auto_increment primary key,
+    -> ed int not null,
+    -> se int not null,
+    -> dep int not null,
+    -> inn int not null,
+    -> la int not null,
+    -> lt int not null,
+    -> cibil int not null,
+    -> ra int not null,
+    -> ca int not null,
+    -> lua int not null,
+    -> ba int not null,
+    -> p int not null,
+    -> lap int not null
+-> );

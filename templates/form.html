@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Loan Application Form</title>
+  <link rel="stylesheet" href="/static/form_css.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="header">
+    <h1>Apply for a Loan</h1>
+  </header>
+
+  <section class="form-container">
+    <form class="loan-form" action="{{ url_for( 'form_data' )}}" method="post">
+      
+      <div class="form-group floating">
+        <input type="number" id="dependents" name="dep" required />
+        <label for="dependents">No. of Dependents</label>
+      </div>
+
+      <div class="form-group floating">
+        <select id="education" name="ed" required>
+          <option value="" disabled selected hidden></option>
+          <option value="0">Graduate</option>
+          <option value="1">Not Graduate</option>
+        </select>
+        <label for="education">Education</label>
+      </div>
+
+      <div class="form-group floating">
+        <select id="self_employed" name="se" required>
+          <option value="" disabled selected hidden></option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <label for="self_employed">Self Employed</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="income" name="inn" required />
+        <label for="income">Annual Income (₹)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="loan_amount" name="la" required />
+        <label for="loan_amount">Loan Amount (₹)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="loan_term" name="lt" required />
+        <label for="loan_term">Loan Term (Months)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="cibil" name="cibil" min="300" max="900" required />
+        <label for="cibil">CIBIL Score</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="res_asset" name="ra" required />
+        <label for="res_asset">Residential Assets Value (₹)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="comm_asset" name="ca" required />
+        <label for="comm_asset">Commercial Assets Value (₹)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="lux_asset" name="lua" required />
+        <label for="lux_asset">Luxury Assets Value (₹)</label>
+      </div>
+
+      <div class="form-group floating">
+        <input type="number" id="bank_asset" name="ba" required />
+        <label for="bank_asset">Bank Asset Value (₹)</label>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" <a href="/dashboard">Submit Application</a></button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Loan Application Portal</p>
+  </footer>
+</body>
+</html>
